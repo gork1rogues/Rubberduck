@@ -240,14 +240,16 @@ namespace Rubberduck.Parsing.Symbols
                 // We can't treat it as a normal index expression because the semantics are different.
                 // It's not actually a function call but a special statement.
                 ResolveDefault(indexExpr.lExpression());
-                var argumentList = indexExpr.argumentList();
-                if (argumentList.argument() != null)
+                var positionalOrNamedArgumentList = indexExpr.argumentList().positionalOrNamedArgumentList();
+                // There is always at least one argument
+                ResolveRedimArgument(positionalOrNamedArgumentList.requiredPositionalArgument().argumentExpression());
+                if (positionalOrNamedArgumentList.positionalArgumentOrMissing() != null)
                 {
-                    foreach (var positionalArgument in argumentList.argument())
+                    foreach (var positionalArgumentOrMissing in positionalOrNamedArgumentList.positionalArgumentOrMissing())
                     {
-                        if (positionalArgument.positionalArgument() != null)
+                        if (positionalArgumentOrMissing is VBAParser.SpecifiedPositionalArgumentContext)
                         {
-                            ResolveRedimArgument(positionalArgument.positionalArgument().argumentExpression());
+                            ResolveRedimArgument(((VBAParser.SpecifiedPositionalArgumentContext)positionalArgumentOrMissing).positionalArgument().argumentExpression());
                         }
                     }
                 }
