@@ -17,7 +17,7 @@
 ###################
 
 #UserForm Binary
-*.frx
+#*.frx
 
 #Excel
 *.xls
