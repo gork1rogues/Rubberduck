@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autodesk.AutoCAD.Interop">
+      <HintPath>..\..\..\..\..\Autodesk\Autodesk_ObjectARX_2014_Win_64_and_32Bit\inc-x64\Autodesk.AutoCAD.Interop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop.Common">
+      <HintPath>..\..\..\..\..\Autodesk\Autodesk_ObjectARX_2014_Win_64_and_32Bit\inc-x64\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Interop.SldWorks.Extensibility">
       <HintPath>..\libs\Interop.SldWorks.Extensibility.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -67,14 +75,6 @@
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Publisher">
       <HintPath>..\libs\Microsoft.Office.Interop.Publisher.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Autodesk.AutoCAD.Interop">
-      <HintPath>..\libs\Autodesk.AutoCAD.Interop.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Autodesk.AutoCAD.Interop.Common">
-      <HintPath>..\libs\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Corel.GraphicsSuite.Interop.CorelDRAW">
